@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authy Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .fake-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: #666;
+            border: 1px solid #ddd;
+            z-index: 10;
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .input-group {
+            display: flex;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .country-code {
+            width: 100px;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-right: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .phone-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #EC1C24;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: not-allowed;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #D0171E;
+        }
+        
+        .privacy-notice {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="fake-label">FAKE</div>
+        
+        <div class="logo-container">
+            <img src="authy_logo.png" alt="Authy Logo" class="logo" />
+        </div>
+        
+        <div class="login-header">
+            <h1>Hi there,</h1>
+            <p>To get started, login or create an Authy account<br>with your phone number.</p>
+        </div>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="country-code">Country code</label>
+                <div class="input-group">
+                    <div class="country-code">
+                        <span>+1</span>
+                        <span>▼</span>
+                    </div>
+                    <input type="text" class="phone-input" placeholder="Phone number" readonly>
+                </div>
+            </div>
+            
+            <button type="button" class="submit-btn">Submit</button>
+        </form>
+        
+        <div class="privacy-notice">
+            By logging in or creating an account, you acknowledge that<br>
+            you read the Privacy Notice.
+        </div>
+        
+        <div class="footer">
+            This is a non-functional replica for demonstration purposes only.
+        </div>
+    </div>
+
+    <script>
+        // This is a non-functional replica - no actual login functionality
+        document.querySelector('.submit-btn').addEventListener('click', function() {
+            alert('This is a non-functional replica. No data will be submitted.');
+        });
+    </script>
+</body>
+</html>
