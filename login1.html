@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBL - My Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333333;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAYFBMVEUAAAD///9/f39sbGz29vbm5uZiYmKnp6fKysrz8/NZWVqxsbH///3r6+sgICA/Pz80NDSVlZUKCgrU1NS6urqenp7g4OCGhoZTU1MTExMaGhpnZ2eOjo4vLy9zc3NHR0eCKZR+AAACSUlEQVR4nO3Y6XKqMACG4QRQAQ8UWUJQlvu/y0IWFoHSsZDhzHzPn4oseSciUggBAAAAAAAAAAAAAAAAAACA/RX+CG/feH4JlVjLx2v9ZthNbRUeVJU4nuY82uXrJWh5mVjJhpWtgOWx2uvlia3qg6JsOuiWr454eRMrL/RNUk32sg6KChn9J9F0KapbIcg/bmEiijz0LDj+UlSL5WVZ3tVWuZGoylPDuWQlSq4o5VbMSBTRc+D/HBUzseAVRqIaOcCF/BxFEvkhR0aiSDo6WU4TdRUTVZ0rirC+4kRRVnt8/YtxmqjqIi+cp4oiGb2eL6pK+pfniSLF76PMXDxbft3fK61GhXJBzunxUX7Qjbx+nUqipmm4KyeKm4lSv8juapTT3dA5k4zDozI5AG3WogZqngxEuWrEfDuKMm4oSt+6vNaigrSVqLnyzUS9VBRZi5Jnm7pDNfXtE8M5r40o/THbZqJInSZ3fQqvR91kSGYoamwz6o6orajMaNQzFLaiHqtRcv9iduA/KFLxYIBWn0bFgXiw8NgzKlbf9ejjqNHXcu+oz2cKUYh6ky5E5fModZ26zaLIEVHqIc/kpoTPokL51EXmqq3kmvqIqFBOjvx/VE5b8hxFMStvqSYnHEWJkNo7Ikp/MCnnXN3x2WQUNVGScRSlnqNf7RzV3xHrAfTTjnnUnbxFDfaO0ue6Siv128HbuEz/Ai9F3VaO/Tk76ZNSv3+3tibs/jc3yq0ZvnjgPwqjTry9IQAAAAAAAAAAAAAAAAAA/H++AcLAIL9v5p9JAAAAAElFTkSuQmCC');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .header-text h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .header-text p {
+            color: #cccccc;
+            font-size: 14px;
+        }
+        
+        .login-section {
+            background-color: #111111;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #333333;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .login-header h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .login-header p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        
+        .form-group input::placeholder {
+            color: #666666;
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        
+        .remember {
+            display: flex;
+            align-items: center;
+            color: #cccccc;
+        }
+        
+        .remember input {
+            margin-right: 8px;
+        }
+        
+        .forgot-password {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .login-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: #cccccc;
+        }
+        
+        .signup-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .products-section {
+            margin-top: 30px;
+        }
+        
+        .products-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-left: 10px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .product-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 5px 0 15px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #3498db #1a1a1a;
+        }
+        
+        .product-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .product-scroll::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+        
+        .product-scroll::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 3px;
+        }
+        
+        .product-card {
+            min-width: 140px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #333333;
+        }
+        
+        .product-image {
+            height: 80px;
+            background-color: #222222;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999999;
+            font-size: 12px;
+            border: 1px solid #333333;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #ffffff;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-size: 13px;
+        }
+        
+        .fake-label {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(52, 152, 219, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: 500;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .demo-note {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 5px;
+            color: #ffc107;
+            font-size: 12px;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 40px;
+            }
+            
+            .container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fake-label">FAKE LOGIN - DEMO</div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="header-text">
+                <h1>My Products</h1>
+                <p>Discovering product ...</p>
+            </div>
+        </div>
+        
+        <div class="login-section">
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your account</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" placeholder="Enter your username or email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="button" class="login-btn" id="loginButton">Sign In</button>
+            </form>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="#">Sign up</a>
+            </div>
+        </div>
+        
+        <div class="demo-note">
+            This is a demonstration interface. No credentials are required or processed.
+        </div>
+        
+        <div class="products-section">
+            <h3>Featured Products</h3>
+            <div class="product-scroll">
+                <div class="product-card">
+                    <div class="product-image">JBL Speaker</div>
+                    <div class="product-name">JBL Charge 5</div>
+                    <div class="product-price">$179.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">JBL Headphones</div>
+                    <div class="product-name">JBL Live 660NC</div>
+                    <div class="product-price">$199.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">JBL Earbuds</div>
+                    <div class="product-name">JBL Free X</div>
+                    <div class="product-price">$129.99</div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">JBL Speaker</div>
+                    <div class="product-name">JBL Flip 6</div>
+                    <div class="product-price">$129.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This is a fake login screen - no actual functionality
+        document.getElementById('loginButton').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                // Fake loading animation
+                const button = document.getElementById('loginButton');
+                const originalText = button.textContent;
+                button.textContent = 'Signing In...';
+                button.disabled = true;
+                button.style.opacity = '0.7';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.opacity = '1';
+                    alert('This is a fake login screen. No actual authentication is performed.');
+                }, 1500);
+            } else {
+                alert('Please enter both username and password (fake credentials)');
+            }
+        });
+    </script>
+</body>
+</html>
